@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-interface ISession {
-  time: string
-}
+export type ISession = {
+  time: string;
+};
 
 @Component({
   selector: 'app-sessions',
@@ -11,13 +11,9 @@ interface ISession {
 })
 export class SessionsComponent implements OnInit {
 
-  public sessions: ISession[] = [];
-  constructor() {
+  @Input('sessions') sessions: ISession[] = [];
+  constructor() {}
 
-  }
-
-  ngOnInit() {
-    this.sessions = [{time: "20"}, {time: "30"}];
-  }
+  ngOnInit() {}
 
 }

@@ -25,7 +25,7 @@ export class SessionFormComponent implements OnInit {
 
   submitSession() {
     if (this.sessionForm.status === 'VALID') {
-      this.dialogRef.close(this.sessionForm.value)
+      this.dialogRef.close(this.sessionForm.value);
     }
   }
 

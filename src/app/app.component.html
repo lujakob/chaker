@@ -10,13 +10,19 @@
     </button>
 
     Champ Tracker
-
+    <button *ngIf="!user.auth" md-button class="btn-login" (click)="login()">
+      Login
+    </button>
+    <button *ngIf="user.auth" md-button class="btn-logout" (click)="logout()">
+      Logout
+    </button>
+    <div class="user">{{userName}}</div>
     <span class="app-toolbar-filler"></span>
   </md-toolbar>
   <div class="app-content">
     <button md-raised-button class="btn btn-primary btn-block" (click)="openAddSession()">Add session</button>
-    <app-sessions></app-sessions>
-    <p>Form value is: {{formValue}}</p>
+    <app-sessions [sessions]="sessions | async"></app-sessions>
+    <button md-raised-button (click)="deleteAll()">Delete all</button>
   </div>
 
 </md-sidenav-layout>

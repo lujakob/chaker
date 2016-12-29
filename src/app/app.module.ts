@@ -19,6 +19,11 @@ const firebaseConfig = {
   messagingSenderId: "1049374695185"
 };
 
+const firebaseAuthConfig = {
+  provider: AuthProviders.Facebook,
+  method: AuthMethods.Popup
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +35,7 @@ const firebaseConfig = {
     ReactiveFormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig,{
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    })
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   entryComponents: [
     SessionFormComponent
