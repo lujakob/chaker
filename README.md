@@ -1,4 +1,5 @@
-# Chacker - the champ tracker - Angular Firebase running tracker application
+# Chacker - the champ tracker
+## Running tracker application based on Angular frontend and Firebase backend.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
