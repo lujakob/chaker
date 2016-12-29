@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { MdDialog } from '@angular/material';
-import { SessionFormComponent } from './components/session-form/session-form.component';
-import { AngularFire, AuthProviders, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { ISession } from './components/sessions/sessions.component';
+import { AngularFire, AuthProviders } from 'angularfire2';
+
 
 @Component({
   selector: 'app-root',
@@ -10,16 +8,14 @@ import { ISession } from './components/sessions/sessions.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public formValue: string = '';
   public user: Object = {};
   public userName: string = '';
-  public sessions: FirebaseListObservable<any>;
+
 
   constructor(
-    public dialog: MdDialog,
     public af: AngularFire
   ) {
-    this.sessions = af.database.list('/sessions');
+
 
     this.af.auth.subscribe(user => {
       if(user) {
@@ -35,21 +31,6 @@ export class AppComponent {
     });
   }
 
-  openAddSession() {
-    let dialogRef = this.dialog.open(SessionFormComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      this.formValue = result.time;
-      this.addItem(result);
-    });
-  }
-
-  addItem(session: ISession) {
-    this.sessions.push({ time: session.time });
-  }
-
-  deleteAll() {
-    this.sessions.remove();
-  }
 
   login() {
     this.af.auth.login({

@@ -1,0 +1,36 @@
+md-card {
+    margin: 10px;
+}
+
+.card-title {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-end;*/
+}
+.card-title span {
+    margin-right:20px;
+}
+
+md-card md-list-item .md-list-item {
+    height:26px;
+}
+
+md-card .user-name {
+    display:inline-block;
+    width:120px;
+}
+
+md-card .time {
+    display:inline-block;
+    width:120px;
+}
+
+md-card .distance {
+    display:inline-block;
+    width:120px;
+}
+
+.list-header {
+    font-weight:bold;
+    margin-bottom:10px;
+}

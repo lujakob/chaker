@@ -5,11 +5,7 @@ html, body {
   padding:20px;
 }
 .app-content {
-  padding: 20px;
-}
-
-.app-content md-card {
-  margin: 20px;
+  padding: 10px;
 }
 
 .app-sidenav {

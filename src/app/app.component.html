@@ -20,9 +20,7 @@
     <span class="app-toolbar-filler"></span>
   </md-toolbar>
   <div class="app-content">
-    <button md-raised-button class="btn btn-primary btn-block" (click)="openAddSession()">Add session</button>
-    <app-sessions [sessions]="sessions | async"></app-sessions>
-    <button md-raised-button (click)="deleteAll()">Delete all</button>
+    <app-sessions [user]="user"></app-sessions>
   </div>
 
 </md-sidenav-layout>

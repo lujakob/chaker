@@ -18,6 +18,7 @@ export class SessionFormComponent implements OnInit {
 
   ngOnInit() {
     this.sessionForm = this.formBuilder.group({
+      distance: ['', Validators.required],
       time: ['', Validators.required]
     });
     console.log(this.sessionForm);

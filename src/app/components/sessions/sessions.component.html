@@ -1,5 +1,19 @@
-<h2>Your sessions:</h2>
-
-<md-list>
-  <md-list-item  *ngFor="let session of sessions"> {{session.time}} </md-list-item>
-</md-list>
+<md-card class="card-title">
+  <span>Dashboard</span>
+  <button md-raised-button class="btn btn-primary btn-block" (click)="openAddSession()">Add session</button>
+  <button md-raised-button (click)="deleteAll()">Delete all</button>
+</md-card>
+<md-card>
+  <md-list>
+    <md-list-item class="list-header">
+      <div class="user-name">Name</div>
+      <div class="distance">Distance</div>
+      <div class="time">Duration</div>
+    </md-list-item>
+    <md-list-item *ngFor="let session of sessions | async">
+      <div class="user-name">{{session.userName}}</div>
+      <div class="distance">{{session.distance}} km</div>
+      <div class="time">{{session.time}} min</div>
+    </md-list-item>
+  </md-list>
+</md-card>
