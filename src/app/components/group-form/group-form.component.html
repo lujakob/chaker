@@ -1,0 +1,17 @@
+<h1 md-dialog-title>Add group</h1>
+<div md-dialog-content>Please enter your group details.</div>
+<div md-dialog-actions>
+  <form (ngSubmit)="submitGroup()" [formGroup]="groupForm">
+    <div class="form-group">
+      <md-input-container>
+        <input md-input placeholder="Name" formControlName="name">
+      </md-input-container>
+      <!--<p *ngIf="!sessionForm.controls.time.valid">This field is required!</p>-->
+    </div>
+    <div class="form-group form-group--button">
+      <button md-raised-button type="submit" class="btn btn-primary btn-block">Save group</button>
+    </div>
+  </form>
+</div>
+
+

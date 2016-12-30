@@ -1,0 +1,40 @@
+md-card {
+    margin: 10px;
+}
+
+.card-title {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-end;*/
+}
+.card-title span {
+    margin-right:20px;
+}
+
+md-card md-list-item .md-list-item {
+    height:26px;
+}
+
+md-card .group-name {
+    display:inline-block;
+    width:120px;
+}
+
+.list-header {
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.icon-add {
+    float:right;
+}
+
+md-list-item:hover {
+    cursor:pointer;
+    background-color:rgba(0,0,0,.0488);
+}
+
+md-list-item a {
+    display:block;
+    color:inherit;
+}

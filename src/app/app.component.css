@@ -4,13 +4,30 @@ html, body {
 .md-sidenav-content {
   padding:20px;
 }
-.app-content {
-  padding: 10px;
+.app-sidenav {
+  width:160px;
+  float:left;
+}
+.app-sidenav nav {
+  margin-top:20px;
+}
+.app-sidenav a {
+  line-height:40px;
+  margin-bottom:1px;
+  padding-left:15px;
+  display:block;
+  color:black;
+  text-decoration:none;
+}
+.app-sidenav a:hover,
+.app-sidenav a.active {
+  background-color:rgba(0,0,0,.0488);
 }
 
-.app-sidenav {
+.app-content {
+  float:left;
+  width:calc(100% - 160px);
   padding: 10px;
-  min-width: 100px;
 }
 
 .app-content md-checkbox {

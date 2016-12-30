@@ -1,27 +1,21 @@
-<md-sidenav-layout>
-
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
-  </md-sidenav>
-
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
-
-    Champ Tracker
-    <button *ngIf="!user.auth" md-button class="btn-login" (click)="login()">
-      Login
-    </button>
-    <button *ngIf="user.auth" md-button class="btn-logout" (click)="logout()">
-      Logout
-    </button>
-    <div class="user">{{userName}}</div>
-    <span class="app-toolbar-filler"></span>
-  </md-toolbar>
-  <div class="app-content">
-    <app-sessions [user]="user"></app-sessions>
-  </div>
-
-</md-sidenav-layout>
+<md-toolbar color="primary">
+  Champ Tracker
+  <button *ngIf="!user.auth" md-button class="btn-login" (click)="login()">
+    Login
+  </button>
+  <button *ngIf="user.auth" md-button class="btn-logout" (click)="logout()">
+    Logout
+  </button>
+  <div class="user">{{userName}}</div>
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+<div class="app-sidenav">
+  <nav>
+    <a routerLink="/session" routerLinkActive="active">Sessions</a>
+    <a routerLink="/group" routerLinkActive="active">Groups</a>
+  </nav>
+</div>
+<div class="app-content">
+  <router-outlet></router-outlet>
+</div>
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AngularFire, AuthProviders } from 'angularfire2';
+import { Component, Inject } from '@angular/core';
+import { AngularFire, AuthProviders, FirebaseRef } from 'angularfire2';
 
 
 @Component({
@@ -13,16 +13,35 @@ export class AppComponent {
 
 
   constructor(
-    public af: AngularFire
+    private af: AngularFire,
+    @Inject(FirebaseRef) fb
   ) {
 
+    var fbRef = fb.database().ref();
+
+
+    fbRef.on('value', snapshot => console.log(snapshot.val()));
+
+    var isNewUser = true;
 
     this.af.auth.subscribe(user => {
       if(user) {
         // user logged in
         this.user = user;
         this.userName = user.auth.displayName;
-        console.log(user);
+
+        fbRef.child('users').orderByChild('email').equalTo(user.auth.email).once('value', (snap) => {
+
+          if (!snap.val()) {
+            let newUser = {
+              uid: user.auth.uid,
+              displayName: user.auth.displayName,
+              email: user.auth.email
+            };
+            this.af.database.list('/users').push(newUser);
+          }
+        });
+
       } else {
         // user not logged in
         this.user = {};

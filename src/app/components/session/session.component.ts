@@ -9,11 +9,11 @@ export type ISession = {
 };
 
 @Component({
-  selector: 'app-sessions',
-  templateUrl: './sessions.component.html',
-  styleUrls: ['./sessions.component.css']
+  selector: 'app-session',
+  templateUrl: './session.component.html',
+  styleUrls: ['./session.component.css']
 })
-export class SessionsComponent implements OnInit {
+export class SessionComponent implements OnInit {
   public sessions: FirebaseListObservable<any>;
 
   @Input('user') user: any;

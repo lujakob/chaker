@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-session-form',
   templateUrl: './session-form.component.html',
   styleUrls: ['./session-form.component.css']
 })
@@ -21,7 +20,6 @@ export class SessionFormComponent implements OnInit {
       distance: ['', Validators.required],
       time: ['', Validators.required]
     });
-    console.log(this.sessionForm);
   }
 
   submitSession() {

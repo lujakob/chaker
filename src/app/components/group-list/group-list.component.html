@@ -1,0 +1,21 @@
+<md-card class="card-title">
+  <span>Groups</span>
+  <button md-raised-button class="btn btn-primary btn-block" (click)="openAddGroup()">Add group</button>
+  <button md-raised-button (click)="deleteAll()">Delete all</button>
+</md-card>
+<md-card>
+  <md-list>
+    <md-list-item class="list-header" *ngIf="groups.length">
+      <div class="group-name">Name</div>
+    </md-list-item>
+    <md-list-item *ngIf="groups.length === 0">
+      <p>Please add a group and select memebers.</p>
+    </md-list-item>
+    <md-list-item *ngFor="let group of groups | async">
+      <a [routerLink]="'/group/' + group.$key">
+        <div class="group-name">{{group.name}}</div>
+        <md-icon class="icon-add"><i class="material-icons">add_circle_outline</i></md-icon>
+      </a>
+    </md-list-item>
+  </md-list>
+</md-card>
